@@ -86,7 +86,6 @@ def add_course():
     return 'Success!'
 
 
-
 # Get all the students at or above a given gpa
 
 
@@ -99,7 +98,8 @@ def getStudentsAboveGPA():
     the_data = request.json['gpa']
 
     # build the query string
-    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA >= '" + the_data + "'"
+    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA >= '" + \
+        str(the_data) + "'"
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
@@ -134,7 +134,8 @@ def getStudentsBelowGPA():
     the_data = request.json['gpa']
 
     # build the query string
-    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA < '" + str(the_data) + "'"
+    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA < '" + \
+        str(the_data) + "'"
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
@@ -169,7 +170,8 @@ def getYearStudents():
     the_data = request.json['year']
 
     # build the query string
-    query = "select userID, firstN, lastN from Students where year = '" + str(the_data) + "'"
+    query = "select userID, firstN, lastN from Students where year = '" + \
+        str(the_data) + "'"
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
@@ -201,7 +203,7 @@ def getDescRatingInstruct():
     cursor = db.get_db().cursor()
 
     # build the query string
-    query = "select teacherID, name, rating from Instructors natural join InstructorRatings order by rating DESC"
+    query = "select teacherID, name, rating from Instructors natural join Instructor_Ratings order by rating DESC"
 
     # use cursor to query the database for a list of products
     cursor.execute(query)
