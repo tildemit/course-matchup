@@ -336,16 +336,16 @@
     "colId": "4c03a516-9371-4f7f-bd25-56cd9b86be83",
     "containerId": "",
     "name": "getInterestsTest1",
-    "url": "localhost:8001/s/getSections",
+    "url": "localhost:8001/s/getCoursesDep",
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-04-18T14:06:36.944Z",
-    "modified": "2023-04-18T14:25:10.657Z",
+    "modified": "2023-04-18T15:40:17.210Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"courseID\": 1197\n}",
+      "raw": "{\n  \"department\": \"College of Engineering\"\n}",
       "form": []
     },
     "tests": []

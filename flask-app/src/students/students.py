@@ -14,14 +14,14 @@ def add_interest():
     cursor = db.get_db().cursor()
 
     # grab the data from the request object
-    userID = request.json['userID']
+    id = request.json['id']
     academic = request.json['academic']
     personal = request.json['personal']
     professional = request.json['professional']
 
     # build the query string
     query = "INSERT INTO Interests(userID,academic,personal,professional) VALUES ('" + \
-        str(userID) + "', '" + academic + "', '" + \
+        str(id) + "', '" + academic + "', '" + \
         personal + "', '" + professional + "')"
 
     # execute and commit
@@ -77,7 +77,7 @@ def get_courses_dep():
     the_data = request.json['department']
 
     # build the query string
-    query = "select Courses.name, courseID, numcredits from Courses join Departments where college = '" + \
+    query = "select DISTINCT Courses.name, courseID, numcredits from Courses join Departments where college = '" + \
         str(the_data) + "'"
 
     # use cursor to query the database for a list of products
@@ -143,12 +143,12 @@ def update_add():
     cursor = db.get_db().cursor()
 
     # grab the data from the request object
-    user_id = request.json['userID']
+    stuID = request.json['stuID']
     address = request.json['address']
 
     # build the query string
     query = "UPDATE Students SET address = '" + address + \
-        "' WHERE userID = '" + str(user_id) + "'"
+        "' WHERE userID = '" + str(stuID) + "'"
 
     # execute and commit
     cursor.execute(query)
@@ -196,10 +196,10 @@ def delete_interests():
     cursor = db.get_db().cursor()
 
     # grab the data from the request object
-    userID = request.json['userID']
+    studentID = request.json['studentID']
 
     # build the query string
-    query = "DELETE FROM Interests WHERE userID = '" + str(userID) + "'"
+    query = "DELETE FROM Interests WHERE userID = '" + str(studentID) + "'"
 
     # execute and commit
     cursor.execute(query)
