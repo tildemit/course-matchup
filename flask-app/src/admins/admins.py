@@ -72,7 +72,7 @@ def add_course():
     # grab the data from the request object
     courseID = request.json['courseID']
     numCredits = request.json['numCredits']
-    name = request.json['name']
+    name = request.json['cname']
     department_code = request.json['department_code']
 
     # build the query string
@@ -234,7 +234,7 @@ def delete_course():
     cursor = db.get_db().cursor()
 
     # grab the data from the request object
-    courseID = request.json['courseID']
+    courseID = request.json['delcourseID']
 
     # build the query string
     query = "DELETE FROM Courses WHERE courseID = '" + str(courseID) + "'"
