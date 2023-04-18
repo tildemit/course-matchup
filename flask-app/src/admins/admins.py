@@ -49,7 +49,7 @@ def update_name():
 
     # grab the data from the request object
     teacher_id = request.json['teacher_id']
-    name = request.json['name']
+    name = request.json['new_name']
 
     # build the query string
     query = "UPDATE Instructors SET name = '" + name + \
@@ -98,7 +98,7 @@ def getStudentsAboveGPA():
     the_data = request.json['gpa']
 
     # build the query string
-    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA >= '" + \
+    query = "select userID, firstN, lastN, gpa from Students natural join Transcripts where GPA >= '" + \
         str(the_data) + "'"
 
     # use cursor to query the database for a list of products
@@ -131,10 +131,10 @@ def getStudentsBelowGPA():
     cursor = db.get_db().cursor()
 
     # grab the data from the request object
-    the_data = request.json['gpa']
+    the_data = request.json['gpaCopy']
 
     # build the query string
-    query = "select userID, firstN, lastN from Students natural join Transcripts where GPA < '" + \
+    query = "select userID, firstN, lastN, gpa from Students natural join Transcripts where GPA < '" + \
         str(the_data) + "'"
 
     # use cursor to query the database for a list of products
