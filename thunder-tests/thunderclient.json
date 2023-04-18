@@ -292,5 +292,62 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "1b72362d-7676-465e-bf25-30d06c388751",
+    "colId": "4c03a516-9371-4f7f-bd25-56cd9b86be83",
+    "containerId": "",
+    "name": "deleteTest",
+    "url": "localhost:8001/s/deleteInterests",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2023-04-17T23:54:54.829Z",
+    "modified": "2023-04-18T14:02:19.816Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"userID\": 5\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "5e1a4385-642a-4e76-9602-51084b6c31cb",
+    "colId": "d6f0fa65-9fe1-470c-a6cc-cdae1025a54d",
+    "containerId": "",
+    "name": "deleteCourseTest1",
+    "url": "localhost:8001/a/deleteCourse",
+    "method": "DELETE",
+    "sortNum": 210000,
+    "created": "2023-04-18T13:56:59.894Z",
+    "modified": "2023-04-18T13:58:36.317Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"courseID\": 3172\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "c9aa9630-473d-4128-8b0e-c6b84c248fa5",
+    "colId": "4c03a516-9371-4f7f-bd25-56cd9b86be83",
+    "containerId": "",
+    "name": "getInterestsTest1",
+    "url": "localhost:8001/s/getSections",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2023-04-18T14:06:36.944Z",
+    "modified": "2023-04-18T14:25:10.657Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"courseID\": 1197\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]

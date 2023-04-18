@@ -224,3 +224,21 @@ def getDescRatingInstruct():
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+
+@admins.route('/deleteCourse', methods=['DELETE'])
+def delete_course():
+    # get a cursor object from the database
+    cursor = db.get_db().cursor()
+
+    # grab the data from the request object
+    courseID = request.json['courseID']
+
+    # build the query string
+    query = "DELETE FROM Courses WHERE courseID = '" + str(courseID) + "'"
+
+    # execute and commit
+    cursor.execute(query)
+    db.get_db().commit()
+
+    return 'Success!'

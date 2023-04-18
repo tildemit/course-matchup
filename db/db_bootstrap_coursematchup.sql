@@ -69,6 +69,7 @@ CREATE TABLE Interests (
     professional VARCHAR(255),
 
     FOREIGN KEY (userID) REFERENCES Students(userID)
+    ON DELETE CASCADE
 
 );
 
@@ -122,9 +123,11 @@ CREATE TABLE Course_Prereqs (
 
     courseID INT,
 
-    FOREIGN KEY (prereqID) REFERENCES Courses(courseID),
+    FOREIGN KEY (prereqID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE,
 
     FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE
 
 );
 
@@ -140,6 +143,7 @@ CREATE TABLE Transcripts_Courses (
     PRIMARY KEY (transcriptID, courseID),
     FOREIGN KEY (transcriptID) REFERENCES Transcripts(transcriptID),
     FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE
 );
 
 
@@ -152,6 +156,7 @@ CREATE TABLE Course_Ratings (
     rating FLOAT,
 
     FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE
 
 );
 
@@ -167,6 +172,7 @@ CREATE TABLE Course_Reqsfulfilled (
     PRIMARY KEY (courseID),
 
     FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE
 
 );
 
@@ -228,7 +234,8 @@ CREATE TABLE Sections (
 
     PRIMARY KEY (secNumber, semester, courseID),
 
-    FOREIGN KEY (courseID) REFERENCES Courses(courseID),
+    FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE,
 
     FOREIGN KEY (teacherID) REFERENCES Instructors(teacherID)
 
@@ -260,7 +267,8 @@ CREATE TABLE Courses_Textbooks (
 
     PRIMARY KEY (courseID, bookID),
 
-    FOREIGN KEY (courseID) REFERENCES Courses(courseID),
+    FOREIGN KEY (courseID) REFERENCES Courses(courseID)
+    ON DELETE CASCADE,
 
     FOREIGN KEY (bookID) REFERENCES Textbooks(bookID)
 
