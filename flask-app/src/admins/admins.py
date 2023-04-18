@@ -225,6 +225,8 @@ def getDescRatingInstruct():
 
     return jsonify(json_data)
 
+# Deletes the course from the database
+
 
 @admins.route('/deleteCourse', methods=['DELETE'])
 def delete_course():

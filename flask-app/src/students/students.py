@@ -156,6 +156,8 @@ def update_add():
 
     return 'Success!'
 
+# Gets the available sections from the courseID
+
 
 @students.route('/getSections', methods=['GET'])
 def get_Sections():
@@ -189,6 +191,8 @@ def get_Sections():
 
     return jsonify(json_data)
 
+# Deletes the student's interests
+
 
 @students.route('/deleteInterests', methods=['DELETE'])
 def delete_interests():
@@ -207,6 +211,8 @@ def delete_interests():
 
     return 'Success!'
 
+
+# Gets the student's interests
 
 @students.route('/getInterests', methods=['GET'])
 def get_interests():
@@ -239,6 +245,8 @@ def get_interests():
         json_data.append(dict(zip(column_headers, row)))
 
     return jsonify(json_data)
+
+# Returns courses in descending order by rating
 
 
 @students.route('/getDescRatingCourses', methods=['GET'])
