@@ -1,3 +1,7 @@
+# Course-MatchUp
+
+Here is the link to our video: https://youtu.be/TQYMlIwMZIk
+
 # MySQL + Flask Boilerplate Project
 
 This repo contains a boilerplate setup for spinning up 3 Docker containers: 
