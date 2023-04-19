@@ -12,8 +12,8 @@ Here is the link to our video: https://youtu.be/TQYMlIwMZIk
 # MySQL + Flask Project
 
 This repo contains a setup for spinning up 3 Docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
+1. A MySQL 8 container
+1. A Python Flask container with REST API
 1. A Local AppSmith Server
 
 ## How to setup and start the containers
