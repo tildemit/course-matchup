@@ -1,7 +1,7 @@
 # Course-MatchUp
-Course-MatchUp aims to give Northeastern students a way to view and match with courses based off of their interests and past ratings
+Course-MatchUp aims to give Northeastern students a way to view and match with courses based off of their interests and past ratings.
 ![image](https://user-images.githubusercontent.com/61031840/233179560-a9716881-0c51-49be-9abc-6d2a024cf471.png)
-The database consists of a multitude of tables such as Departments, Students, Courses, Sections, and Instructors. These are the main tables used in the application, with other tables serving to connect these main tables via foreign keys, or provide more information about these tables to be used in the queries (such as ratings for a professor or prerequisites for a course)
+The database consists of a multitude of tables such as Departments, Students, Courses, Sections, and Instructors. These are the main tables used in the application, with other tables serving to connect these main tables via foreign keys, or provide more information about these tables to be used in the queries (such as ratings for a professor or prerequisites for a course).
 
 The two major personas we developed for are administrators and students. As the scope of the project became clearer, we did diverge a bit from our original user personas and stories. Ultimately the administrators routes serve to give admins of the Course-MatchUp a way to seamless update information in the database, keeping course course and professor information up-to-date for students. On the student-side, students are given a means to enter their own interests into the application, as well as search through courses they may be interested in based off of department and ratings.
 
